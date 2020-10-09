@@ -32,7 +32,7 @@ curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$news");
 // follow redirects 
 curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1); 
 //ADD header array 
-$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: zMxIcpq0lxcWs8InNImVatoAOwcWu5XDx71GY5oL2p4', ); 
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: 3ACDH8LYP69SBzA171EZs8Vg4Edlh9i5ZBVfBmSUhMk', ); 
 curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
 //RETURN 
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
