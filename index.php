@@ -9,7 +9,7 @@ curl_close($ch);
  
 $xml = new SimpleXmlElement($contents);
 //for($i=0; $i<count($xml->channel->item); $i++){
-	for($i=0; $i<10; $i++){
+	for($i=0; $i<5; $i++){
 $url = $xml->channel->item[$i]->link;
 $title = $xml->channel->item[$i]->title;
 $description = $xml->channel->item[$i]->description;
@@ -32,7 +32,7 @@ curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$news");
 // follow redirects 
 curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1); 
 //ADD header array 
-$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer vs1Hs0LqnDTJZQ9wWhs2hu0aiyAKexXFfg8N8tjB5eb', ); 
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer fwEJpjy74gqS2i6T08BVKxUqCsNBckXC19J427yHGYk', ); 
 curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
 //RETURN 
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
