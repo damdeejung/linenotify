@@ -1,7 +1,7 @@
 <?php
 
 /////////////////// ดึงข่าว ////////////////
-$ch = curl_init('https://www.http://rssfeeds.sanook.com/rss/feeds/sanook/hot.news.xml');
+$ch = curl_init('http://rssfeeds.sanook.com/rss/feeds/sanook/hot.news.xml');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $contents = curl_exec($ch);
