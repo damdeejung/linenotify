@@ -1,7 +1,7 @@
 <?php
 
 /////////////////// ดึงข่าว ////////////////
-$ch = curl_init('http://rssfeeds.sanook.com/rss/feeds/sanook/hot.news.xml');
+$ch = curl_init('https://www.posttoday.com/rss/src/breakingnews.xml');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $contents = curl_exec($ch);
@@ -9,7 +9,7 @@ curl_close($ch);
  
 $xml = new SimpleXmlElement($contents);
 //for($i=0; $i<count($xml->channel->item); $i++){
-	for($i=0; $i<5; $i++){
+	for($i=0; $i<10; $i++){
 $url = $xml->channel->item[$i]->link;
 $title = $xml->channel->item[$i]->title;
 $description = $xml->channel->item[$i]->description;
