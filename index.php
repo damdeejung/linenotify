@@ -32,8 +32,12 @@ curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$news");
 // follow redirects 
 curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1); 
 //ADD header array 
-$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer fwEJpjy74gqS2i6T08BVKxUqCsNBckXC19J427yHGYk', ); 
-curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer 3ACDH8LYP69SBzA171EZs8Vg4Edlh9i5ZBVfBmSUhMk', ); //dkdamrong
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer rU5QQMxtA8VE3gWzGmyE9R4GYA3kjIQrArcU0UIKevq', ); //panja
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer osvs6eFcvIQWdA8gwI1rxdITHbmTWFB2CT7RpW3Q3Pv', ); //kang tong kam
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
 //RETURN 
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
 $result = curl_exec( $chOne ); 
