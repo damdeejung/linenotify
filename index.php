@@ -1,7 +1,7 @@
 <?php
 
 /////////////////// ดึงข่าว ////////////////
-$ch = curl_init('https://www.tmd.go.th/xml/region_daily_forecast.php?RegionID=7');
+$ch = curl_init('https://www.posttoday.com/rss/src/breakingnews.xml'); //แหล่งข่าว
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $contents = curl_exec($ch);
@@ -33,12 +33,12 @@ curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$news");
 // follow redirects 
 curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1); 
 //ADD header array
-for($x=0; $x<3; $x++){
 $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer O4iWswQxqWbRkbPszlzLea8sdqvvI2fIMEb9pRF6VpY', ); //หรียญทอง
 curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
 //RETURN
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
 $result = curl_exec( $chOne ); 
+
 $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer 0btH1CvWA5iJcJoNBV2ATVUV7zOovtewuZbSHfCY9HI', ); //ชุมแสง
 curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);	
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
@@ -47,8 +47,19 @@ $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorizat
 curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
 $result = curl_exec( $chOne ); 	
-	
-}
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer vs1Hs0LqnDTJZQ9wWhs2hu0aiyAKexXFfg8N8tjB5eb', ); //นิตยา
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+$result = curl_exec( $chOne );
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer rU5QQMxtA8VE3gWzGmyE9R4GYA3kjIQrArcU0UIKevq', ); //ปัญจ
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+$result = curl_exec( $chOne );
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer fwEJpjy74gqS2i6T08BVKxUqCsNBckXC19J427yHGYk', ); //ดำบรรณ
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+$result = curl_exec( $chOne );
+
  
 //Check error 
 if(curl_error($chOne)) { echo 'error:' . curl_error($chOne); } 
