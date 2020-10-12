@@ -1,7 +1,7 @@
 <?php
 
 /////////////////// ดึงข่าว ////////////////
-$ch = curl_init('https://119.46.126.1/xml/region_daily_forecast.php?RegionID=7');
+$ch = curl_init('https://www.tmd.go.th/xml/region_daily_forecast.php?RegionID=7');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $contents = curl_exec($ch);
