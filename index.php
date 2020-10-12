@@ -1,7 +1,7 @@
 <?php
 
 /////////////////// ดึงข่าว ////////////////
-$ch = curl_init('https://www.posttoday.com/rss/src/breakingnews.xml');
+$ch = curl_init('https://119.46.126.1/xml/region_daily_forecast.php?RegionID=7');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $contents = curl_exec($ch);
@@ -33,18 +33,23 @@ curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$news");
 // follow redirects 
 curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1); 
 //ADD header array
-for($x=0; $x<2; $x++){
-$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer 3ACDH8LYP69SBzA171EZs8Vg4Edlh9i5ZBVfBmSUhMk', ); //dkdamrong
+for($x=0; $x<3; $x++){
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer O4iWswQxqWbRkbPszlzLea8sdqvvI2fIMEb9pRF6VpY', ); //หรียญทอง
 curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+//RETURN
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
 $result = curl_exec( $chOne ); 
-$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer 0btH1CvWA5iJcJoNBV2ATVUV7zOovtewuZbSHfCY9HI', ); //chum sang
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer 0btH1CvWA5iJcJoNBV2ATVUV7zOovtewuZbSHfCY9HI', ); //ชุมแสง
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);	
+curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+$result = curl_exec( $chOne );
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer osvs6eFcvIQWdA8gwI1rxdITHbmTWFB2CT7RpW3Q3Pv', ); //เก๋งทองคำ
 curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
-
+curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+$result = curl_exec( $chOne ); 	
+	
 }
-//RETURN	
-curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
-$result = curl_exec( $chOne ); 
+ 
 //Check error 
 if(curl_error($chOne)) { echo 'error:' . curl_error($chOne); } 
 else { $result_ = json_decode($result, true); 
