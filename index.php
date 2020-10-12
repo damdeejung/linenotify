@@ -17,7 +17,7 @@ $news .= $title."\n".$url."\n\n";
 
 }
 /////////////////////////////////////
-for($x=0; $x<1; $x++){
+for($x=0; $x<2; $x++){
 $message = $_REQUEST['message'];
 $chOne = curl_init(); 
 curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify"); 
@@ -35,10 +35,11 @@ curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1);
 //ADD header array 
 $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer 3ACDH8LYP69SBzA171EZs8Vg4Edlh9i5ZBVfBmSUhMk', ); //dkdamrong
 curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
-//RETURN
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer rU5QQMxtA8VE3gWzGmyE9R4GYA3kjIQrArcU0UIKevq', ); //PJ
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
 
 }
-	
+//RETURN	
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
 $result = curl_exec( $chOne ); 
 //Check error 
