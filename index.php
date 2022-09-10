@@ -9,7 +9,7 @@ curl_close($ch);
  
 $xml = new SimpleXmlElement($contents);
 //for($i=0; $i<count($xml->channel->item); $i++){
-	for($i=0; $i<10; $i++){
+	for($i=0; $i<5; $i++){
 $url = $xml->channel->item[$i]->link;
 $title = $xml->channel->item[$i]->title;
 $description = $xml->channel->item[$i]->description;
@@ -60,10 +60,11 @@ curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
 curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
 $result = curl_exec( $chOne );
 
-//$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer 3ACDH8LYP69SBzA171EZs8Vg4Edlh9i5ZBVfBmSUhMk', ); //damdee
-//curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
-//curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
-//$result = curl_exec( $chOne );
+$headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer 3ACDH8LYP69SBzA171EZs8Vg4Edlh9i5ZBVfBmSUhMk', ); //damdee
+curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+$result = curl_exec( $chOne );
  
 //Check error 
 if(curl_error($chOne)) { echo 'error:' . curl_error($chOne); } 
